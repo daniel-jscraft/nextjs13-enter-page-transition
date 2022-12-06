@@ -1,11 +1,6 @@
-'use client'
-
 import NavLink from './NavLink'
-import { useSelectedLayoutSegment } from 'next/navigation'
 
 export default function RootLayout({ children }) {
-  const activeSegment = useSelectedLayoutSegment()
-
   const links = [
     {label: '🏡 Home', path: '/', targetSegment: null}, 
     {label: '📦 Store', path: '/store', targetSegment: 'store'},
@@ -16,7 +11,7 @@ export default function RootLayout({ children }) {
     <html>
       <head />
       {links.map ( (l, i) => 
-        <NavLink key={i} {...l} activeSegment={activeSegment} />
+        <NavLink key={i} {...l} />
       )}
       <body>{children}</body>
     </html>
