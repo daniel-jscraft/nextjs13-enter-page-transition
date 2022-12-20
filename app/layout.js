@@ -1,19 +1,19 @@
-import NavLink from './NavLink'
+import Link from "next/link";
+import { getPokemons } from "./getPokemons";
 
-export default function RootLayout({ children }) {
-  const links = [
-    {label: '🏡 Home', path: '/', targetSegment: null}, 
-    {label: '📦 Store', path: '/store', targetSegment: 'store'},
-    {label: '📘 About', path: '/about', targetSegment: 'about'}
-  ]
-  
+export default async function Layout({ children }) {
+  const { results } = await getPokemons();
+
   return (
-    <html>
-      <head />
-      {links.map ( (l, i) => 
-        <NavLink key={i} {...l} />
-      )}
-      <body>{children}</body>
-    </html>
-  )
+    <div style={{display: 'flex', gap: '2rem'}}>
+      <ul>
+        {results.map(({ name }, i) => (
+          <li key={`${name}_${i}`}>
+            <Link href={`/pokemon/${name}`}>{name}</Link>
+          </li>
+        ))}
+      </ul>
+      {children}
+    </div>
+  );
 }

@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-13-selected-nav-link",
+  "name": "nested-layout",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "eslint": "8.29.0",
-    "eslint-config-next": "13.0.6",
-    "next": "13.0.6",
+    "@types/react-dom": "18.0.8",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.3",
+    "next": "13.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.17",
+    "@types/react": "18.0.26",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4"
   }
 }
