@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    height:100vh;
+    background-color: orangered;
+    color: white;
+    padding: 1rem;
+}
+
+body a {
+    color: white;
+    display: inline-block;
+    margin: 0.5rem;
+} 

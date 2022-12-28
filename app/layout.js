@@ -1,19 +1,9 @@
-import Link from "next/link";
-import { getPokemons } from "./getPokemons";
-
-export default async function Layout({ children }) {
-  const { results } = await getPokemons();
-
+import "./global.css";
+export default function RootLayout({ children }) {
   return (
-    <div style={{display: 'flex', gap: '2rem'}}>
-      <ul>
-        {results.map(({ name }, i) => (
-          <li key={`${name}_${i}`}>
-            <Link href={`/pokemon/${name}`}>{name}</Link>
-          </li>
-        ))}
-      </ul>
-      {children}
-    </div>
-  );
+    <html>
+      <head />
+      <body>{children}</body>
+    </html>
+  )
 }
